@@ -89,19 +89,22 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+
+# Custom CD command that is followed with an ls
+ c() {
+ 	cd $1;
+ 	/usr/bin/exa-linux-x86_64 --long;
+}
+alias cd="c"
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias man="tldr"
 alias cat="bat"
 alias ls="/usr/bin/exa-linux-x86_64 --long"
-alias logisim="java -jar /usr/bin/logisim-generic-2.7.1.jar"
-alias matlab="pushd /usr/local/MATLAB/R2018a/bin/ > /dev/null; sudo /usr/local/MATLAB/R2018a/bin/matlab; popd > /dev/null"
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias runelite="java -jar /usr/local/RuneLite.jar --mode=OFF > /dev/null"
-alias kdenlive="/usr/bin/kdenlive-19.04.0-x86_64.AppImage > /dev/null"
-#alias grep="rg"
 alias kitty="~/.local/kitty.app/bin/kitty"
 alias dolphin="dolphin . > /dev/null &"
 alias jupyter="python3 -m jupyterlab"
+
 export PATH="/home/andrew/.local/kitty.app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.vimpkg/bin"
