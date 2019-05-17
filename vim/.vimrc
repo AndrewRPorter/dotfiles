@@ -4,5 +4,3 @@ set incsearch
 set tabstop=4
 
 colorscheme torte
-execute pathogen#infect()
-call pathogen#helptags()
