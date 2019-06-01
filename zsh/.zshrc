@@ -105,6 +105,6 @@ alias cat="bat"
 alias ls="/usr/bin/exa-linux-x86_64 --long"
 alias kitty="~/.local/kitty.app/bin/kitty"
 alias dolphin="dolphin . > /dev/null &"
-alias jupyter="python3 -m jupyterlab"
+alias disp="kitty icat"
 
-export PATH="/home/andrew/.local/kitty.app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.vimpkg/bin"
+export PATH="/home/andrew/.local/kitty.app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.vimpkg/bin:/home/andrew/.local/bin"
