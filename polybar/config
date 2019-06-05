@@ -30,7 +30,7 @@ alert = #bd2c40
 [bar/andrew]
 width = 100%
 height = 19  # this is the exact height of dmenu
-fixed-center = true
+fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}

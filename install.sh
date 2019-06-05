@@ -8,3 +8,4 @@ rm ~/.vimrc; ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
 rm ~/.zshrc; ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 rm ~/.config/kitty/kitty.conf; ln -s ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 rm ~/.config/polybar/config; ln -s ~/dotfiles/polybar/config ~/.config/polybar/config
+rm ~/.config/spicetify/Themes/SpicetifyDefault/color.ini; ln -s ~/dotfiles/spicetify/color.ini ~/.config/spicetify/Themes/SpicetifyDefault/color.ini
