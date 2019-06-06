@@ -37,4 +37,4 @@ alias dolphin="dolphin . > /dev/null &"
 alias disp="kitty icat"
 
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-export PATH="/home/andrew/.local/kitty.app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.vimpkg/bin:/home/andrew/.local/bin:/usr/bin/apache-maven-3.6.1/apache-maven/src/bin:$JAVA_HOME/bin"
+export PATH="/home/andrew/.local/kitty.app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.vimpkg/bin:/home/andrew/.local/bin:/usr/bin/apache-maven-3.6.1/apache-maven/src/bin:$JAVA_HOME/bin:/snap/bin"
