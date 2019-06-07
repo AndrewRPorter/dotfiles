@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Scripts directory linked (usually used for startup scripts)
 if [ -d ~/.scripts ]; then
