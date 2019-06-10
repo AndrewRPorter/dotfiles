@@ -1,6 +1,6 @@
 # dotfiles
 
-Collection of useful dotfiles that I use to run my linux installation for a daily workflow
+Collection of useful dotfiles that I use to drive my linux installation for a daily workflow
 
 # Applications
 

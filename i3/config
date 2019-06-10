@@ -27,13 +27,13 @@ for_window [class="Plasmoidviewer"] floating enable
 # >>> Window Rules <<<
 
 # >>> Avoid tiling for non-Plasma stuff <<<
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-for_window [window_role="About"] floating enable 
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
+#for_window [window_role="pop-up"] floating enable
+#for_window [window_role="bubble"] floating enable
+#for_window [window_role="task_dialog"] floating enable
+#for_window [window_role="Preferences"] floating enable
+#for_window [window_role="About"] floating enable 
+#for_window [window_type="dialog"] floating enable
+#for_window [window_type="menu"] floating enable
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -184,6 +184,8 @@ mode "resize" {
 }
 
 bindsym Mod1+r mode "resize"
+
+focus_follows_mouse no
 
 gaps inner 10
 gaps outer 5
