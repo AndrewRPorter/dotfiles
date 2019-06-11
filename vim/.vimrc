@@ -20,15 +20,8 @@ command W w !sudo tee % > /dev/null
 " Enable syntax highlighting
 syntax enable
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
-try
-    colorscheme desert
-catch
-endtry
+" Enable 256 colors palette
+set t_Co=256
 
 " Use spaces instead of tabs
 set expandtab
@@ -40,6 +33,6 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-colorscheme slate
+colorscheme peaksea
 execute pathogen#infect()
 call pathogen#helptags()
