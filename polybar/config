@@ -42,13 +42,13 @@ border-color = #00000000
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = "Roboto:pixelsize=9;0"
+font-1 = "Roboto:size=11:weight=bold;2"
+font-2 = "Noto Sans:size=11;1"
 
 modules-left = i3 xwindow
 modules-center = spotify
-modules-right = xkeyboard pulseaudio wlan battery date
+modules-right = xkeyboard wlan cpu battery pulseaudio date
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -56,39 +56,37 @@ modules-right = xkeyboard pulseaudio wlan battery date
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[module/cpu]
+type = internal/cpu
+interval = 1
+label = %percentage%%
+format-underline = #4bec13
+
 [module/i3]
 type = internal/i3
 ; Only show workspaces defined on the same output as the bar
 ;
 ; Useful if you want to show monitor specific workspaces
 ; on different bars
-;
-; Default: false
-pin-workspaces = true
+pin-workspaces = false
 
 ; This will split the workspace name on ':'
-; Default: false
-strip-wsnumbers = true
+strip-wsnumbers = false
 
 ; Sort the workspaces by index instead of the default
 ; sorting that groups the workspaces by output
-; Default: false
 index-sort = true
 
 ; Create click handler used to focus workspace
-; Default: true
-enable-click = false
+enable-click = true
 
 ; Create scroll handlers used to cycle workspaces
-; Default: true
-enable-scroll = false
+enable-scroll = true
 
 ; Wrap around when reaching the first/last workspace
-; Default: true
 wrapping-scroll = false
 
 ; Set the scroll cycle direction 
-; Default: true
 reverse-scroll = false
 
 [module/xwindow]
@@ -101,8 +99,9 @@ type = custom/script
 interval = 1
 format-prefix = 
 format = <label>
-exec = python /usr/bin/spotify_status.py -f '{artist}: {song}'
+exec = python /usr/bin/spotify_status.py -f '{artist}:    {song}'
 format-underline = #1db954
+click-left = i3-msg '[class="Spotify"] focus'
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -154,10 +153,11 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume = VOL %percentage%%
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
+format-volume-underline = #575772
 
-label-muted = VOL 0%
+label-muted = 0%
 label-muted-foreground = #666
 
 [module/battery]
