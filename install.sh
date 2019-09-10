@@ -30,12 +30,6 @@ if [ -f ~/.config/polybar/config ]; then
 fi
 ln -s ~/dotfiles/polybar/config ~/.config/polybar/config
 
-# spicetify (Spotify skin) color profile
-if [ -f ~/.config/spicetify/Themes/SpicetifyDefault/color.ini ]; then
-    rm ~/.config/spicetify/Themes/SpicetifyDefault/color.ini;
-fi
-ln -s ~/dotfiles/spicetify/color.ini ~/.config/spicetify/Themes/SpicetifyDefault/color.ini
-
 # i3-gaps configuration
 if [ -f ~/.config/plasma-workspace/env/start_window_manager.sh ]; then
 	rm ~/.config/plasma-workspace/env/start_window_manager.sh;
