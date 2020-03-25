@@ -22,6 +22,7 @@ syntax enable
 
 " Enable 256 colors palette
 set t_Co=256
+set t_ut="" " isable Vim's Background Color Erase (BCE), fixing background color bug
 
 " Use spaces instead of tabs
 set expandtab
@@ -32,7 +33,7 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
-
+set background=dark
 colorscheme peaksea
 execute pathogen#infect()
 call pathogen#helptags()

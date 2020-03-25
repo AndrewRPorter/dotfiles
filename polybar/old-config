@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #545454
+background = #222
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
@@ -28,8 +28,7 @@ alert = #bd2c40
 [bar/andrew]
 width = 100%
 height = 19  # this is the exact height of dmenu
-radius = 0.0
-fixed-center = true
+fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -40,35 +39,22 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 1
-padding-right = 1
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 2
+module-margin-right = 2
 
-font-0 = "Source Code Pro:pixelsize=10;0"
-font-1 = uni font:fontformat=truetype:size=10:antialias=false;0
-font-2 = siji:pixelsize=9;1
-font-3 = FontAwesome:style=Solid:size=17;1
-font-4 = FontAwesome:style=Regular:size=12;4
-font-5 = Font-Awesome-5-Free-Solid:size17;1
-font-6 = Font-Awesome-5:style=Free-Solid:size=17;1
-font-7 = FontAwesome5Free:style=Solid:size=12;4
-font-8 = FontAwesome5Free:style=Regular:size=12;4
-font-9 = FontAwesome5Brands:style=Regular:size=12;4
+font-0 = "Roboto:pixelsize=9;0"
+font-1 = "Roboto:size=11:weight=bold;2"
+font-2 = "Noto Sans:size=11;1"
 
-modules-left = i3 xwindow spotify
-modules-center = date
-modules-right = xkeyboard expressvpn wlan memory cpu pulseaudio battery
+modules-left = i3 xwindow
+modules-center = spotify
+modules-right = xkeyboard wlan memory cpu pulseaudio battery date
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[module/expressvpn]
-type = custom/script
-interval = 5
-format-prefix = "VPN: "
-exec = "python /home/andrew/dev/expressvpn-polybar/vpn_status.py --status"
-format-underline = #ffffff
 
 [module/memory]
 type = internal/memory
@@ -84,44 +70,35 @@ format-underline = #4bec13
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+pin-workspaces = false
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
- 
+; This will split the workspace name on ':'
+strip-wsnumbers = false
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+index-sort = true
+
+; Create click handler used to focus workspace
 enable-click = true
+
+; Create scroll handlers used to cycle workspaces
 enable-scroll = true
 
-; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 1
- 
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 1
- 
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
- 
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
- 
-; Separator in between workspaces
-; label-separator = |
+; Wrap around when reaching the first/last workspace
+wrapping-scroll = false
+
+; Set the scroll cycle direction 
+reverse-scroll = false
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+format-underline = #c1bcba 
 
 [module/spotify]
 type = custom/script
@@ -166,8 +143,11 @@ ramp-signal-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-time = %I:%M %p | %m. %d. %Y
-time-alt = %H:%M:%S | %m. %d. %Y
+date = %a, %h %d%
+date-alt = " %Y-%m-%d"
+
+time = %I:%M %p
+time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
@@ -181,7 +161,7 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
-format-volume-underline = #0CB8E8
+format-volume-underline = #575772
 
 label-muted = 0%
 label-muted-foreground = #666
