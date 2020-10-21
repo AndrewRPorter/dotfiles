@@ -31,25 +31,29 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
+export GOPATH=$HOME/go
+#export GO111MODULE=on
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
 # Custom aliases
 alias cd="c"
 alias cat="bat --style numbers,grid"
 alias ls="/usr/bin/exa-linux-x86_64 --long"
-alias kitty="~/.local/kitty.app/bin/kitty"
-alias dolphin="dolphin . > /dev/null &"
-alias disp="kitty icat"
 alias black="black --line-length 120"
 alias vpn="expressvpn"
+alias cloc="cloc --exclude-dir='.env'"
+alias isort="isort --m 7"
+
+export ANDROID_SDK_ROOT="/home/andrew/.android/sdk"
+export ANDROID_HOME="/home/andrew/.android/sdk"
 
 okularFunc() {
     okular $1 &;
 }
 alias okular="okularFunc"
 
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-
-export PATH="/home/andrew/.local/kitty.app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.vimpkg/bin:/home/andrew/.local/bin:/usr/bin/apache-maven-3.6.1/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/snap/bin:/home/andrew/.vimpkg/bin:/usr/local/bin/charm:/usr/local/go/bin:/home/linuxbrew/.linuxbrew/bin"
-source /home/andrew/.scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="/home/andrew/.local/kitty.app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.vimpkg/bin:/home/andrew/.local/bin:/usr/bin/apache-maven-3.6.1/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/snap/bin:/home/andrew/.vimpkg/bin:/usr/local/bin/charm:/usr/local/go/bin:/home/linuxbrew/.linuxbrew/bin:/usr/bin/thinkorswim/thinkorswim:/usr/local/go/bin:/home/andrew/go/bin:/home/andrew/webdrivers:/home/andrew/.android/sdk"
+source /home/andrew/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/andrew/.sdkman"
