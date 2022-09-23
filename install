@@ -1,21 +1,30 @@
 #!/bin/bash
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+# attempt to install ZSH
+if [ "$OSTYPE" == "linux-gnu"* ]; then
     # note we pipe "yes n" into this apt install to preserve
     # the z login file. Otherwise, this install will overwrite it
+    echo "[dotfiles] installing ZSH shell"
     yes n | sudo sudo apt-get --assume-yes install zsh
 fi
 
-# Set ZSH as default shell
-sudo chsh -s /bin/zsh $(whoami)
+# set ZSH as default shell
+if [ "$SHELL" != "/bin/zsh"* ]; then
+    sudo chsh -s /bin/zsh $(whoami)
+fi
 
-# Install Oh My Zsh
-echo "[dotfiles] Installing oh my zsh"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install oh my zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "[dotfiles] Installing oh my zsh"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
-echo "[dotfiles] Setting up ZSH auto-suggestions"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# install oh my zsh plugins
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
+    echo "[dotfiles] Setting up ZSH auto-suggestions"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
 
-# Create symlink of all dotfiles to home directory
+# create symlink of all dotfiles to home directory
 cwd=$(pwd)
 ln -sf $cwd/.zshrc ~/.zshrc
