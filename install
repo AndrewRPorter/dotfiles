@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [[ "$OSTYPE" != "linux-gnu"* ]]; then
+    sudo apt install zsh -y
+fi
+
 # Set ZSH as default shell
 sudo chsh -s /bin/zsh $(whoami)
 
