@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# Check if the dotfiles are cloned and if not clone them
-if [ -d ~/.dotfiles/ ]; then
-    echo "[dotfiles] ~/.dotfiles directory already exists!"
-else
-    git clone https://github.com/AndrewRPorter/dotfiles.git ~/.dotfiles
-fi
-
 # Install Oh My Zsh
 echo "[dotfiles] Installing oh my zsh"
 if [[ "$OSTYPE" != "linux-gnu"* ]]; then
