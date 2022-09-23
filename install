@@ -1,8 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
-if [[ "$OSTYPE" != "linux-gnu"* ]]; then
-    sudo apt install zsh -y
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # note we pipe "yes n" into this apt install to preserve
+    # the z login file. Otherwise, this install will overwrite it
+    yes n | sudo sudo apt-get --assume-yes install zsh
 fi
+
 
 # Set ZSH as default shell
 sudo chsh -s /bin/zsh $(whoami)
