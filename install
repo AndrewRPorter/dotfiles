@@ -6,7 +6,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     yes n | sudo sudo apt-get --assume-yes install zsh
 fi
 
-
 # Set ZSH as default shell
 sudo chsh -s /bin/zsh $(whoami)
 
@@ -16,3 +15,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 echo "[dotfiles] Setting up ZSH auto-suggestions"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Create symlink of all dotfiles to home directory
+cwd=$(pwd)
+ln -s $cwd/.zshrc ~/.zshrc
