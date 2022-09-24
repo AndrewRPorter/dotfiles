@@ -20,4 +20,5 @@ alias c="clear"
 # git specific aliases
 alias gs="git status"
 alias gd="git diff"
-alias gw="git add -A; git commit -m 'WIP'; git push"
+alias gw="git add -A; git commit -m 'WIP';"
+alias gwp="gw; git push"
