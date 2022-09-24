@@ -16,6 +16,8 @@ fi
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias gs="git status"
-alias gitwip="git add -A; git commit -m 'WIP'; git push"
 alias c="clear"
+# git specific aliases
+alias gs="git status"
+alias gd="git diff"
+alias gw="git add -A; git commit -m 'WIP'; git push"
