@@ -17,8 +17,9 @@ fi
 alias ..="cd .."
 alias ...="cd ../.."
 alias c="clear"
+alias ll='ls -la'
 # git specific aliases
 alias gs="git status"
 alias gd="git diff"
-alias gw="git add -A; git commit -m 'WIP';"
+alias gw="git add -A; git commit -m 'WIP'"
 alias gwp="gw; git push"
