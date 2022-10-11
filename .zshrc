@@ -9,11 +9,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# we don't want this on codespaces
-if [[ "$OSTYPE" != "linux-gnu"* ]]; then
-	if [ -x "$(command -v rbenv)" ]; then
-		eval "$(rbenv init - zsh)"
-	fi
+if [ -x "$(command -v rbenv)" ]; then
+	eval "$(rbenv init - zsh)"
+	export PATH="$HOME/.rbenv/shims:$PATH"
+fi
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	# allow yarn command in github/github
+	export PATH=/workspaces/github/vendor/node/node-v16.13.0-linux-x64/bin:$PATH
 fi
 
 alias ..="cd .."

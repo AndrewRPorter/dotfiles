@@ -4,8 +4,9 @@
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # note we pipe "yes n" into this apt install to preserve
     # the z login file. Otherwise, this install will overwrite it
-    echo "[dotfiles] installing ZSH shell"
-    yes n | sudo sudo apt-get --assume-yes install zsh
+    echo "[dotfiles] installing ZSH and ruby build info"
+    yes n | sudo sudo apt-get --assume-yes install zsh rbenv
+    git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build 
 fi
 
 # set ZSH as default shell
