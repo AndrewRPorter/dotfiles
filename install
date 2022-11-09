@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # attempt to install ZSH
-if [ "$OSTYPE" == "linux-gnu"* ]; then
-    # note we pipe "yes n" into this apt install to preserve
-    # the z login file. Otherwise, this install will overwrite it
-    echo "[dotfiles] installing ZSH shell"
-    yes n | sudo sudo apt-get --assume-yes install zsh
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]
+then
+    ./scripts/install-linux.sh
+else
+    ./scripts/install-mac.sh
 fi
 
 # set ZSH as default shell
