@@ -15,11 +15,6 @@ if [ -x "$(command -v rbenv)" ]; then
 	export PATH="$HOME/.rbenv/shims:$PATH"
 fi
 
-# allow yarn command in github/github
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-	export PATH=/workspaces/github/vendor/node/node-v16.13.0-linux-x64/bin:$PATH
-fi
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias c="clear"
