@@ -15,6 +15,10 @@ if [ -x "$(command -v rbenv)" ]; then
 	export PATH="$HOME/.rbenv/shims:$PATH"
 fi
 
+function kdo() {
+	ps ax|grep -i docker|egrep -iv 'grep|com.docker.vmnetd'|awk '{print $1}'|xargs kill
+}
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias c="clear"
