@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]
+if [[ "$OSTYPE" == "linux-"* ]]
 then
     ./scripts/install-linux.sh
 else
