@@ -1,6 +1,6 @@
 # dotfiles
 
-Dotfiles to sync my local environment with [codespaces](https://github.com/features/codespaces).
+Dotfiles to sync my local environment across machines (macOS and Linux).
 
 ## Install
 
