@@ -20,5 +20,5 @@ alias gw="git add -A; git commit -m 'WIP'"
 alias gwp="gw; git push"
 
 if command -v tmux >/dev/null 2>&1 && [[ -z "$TMUX" ]]; then
-  exec tmux new-session -A -s main
+  exec tmux new-session
 fi
