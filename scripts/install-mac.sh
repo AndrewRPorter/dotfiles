@@ -7,6 +7,9 @@ fi
 
 brew install stats tmux
 
+echo "[dotfiles] installing Copilot CLI"
+curl -fsSL https://gh.io/copilot-install | bash
+
 # install tmux plugin manager
 if [[ ! -d "$HOME/.tmux/plugins/tpm" ]]; then
     echo "[dotfiles] installing TPM"
