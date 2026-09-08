@@ -5,7 +5,7 @@ if ! command -v brew &> /dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew install stats tmux
+brew install tmux
 
 echo "[dotfiles] installing Copilot CLI"
 curl -fsSL https://gh.io/copilot-install | bash
