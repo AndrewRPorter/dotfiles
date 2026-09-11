@@ -19,6 +19,6 @@ alias gd="git diff"
 alias gw="git add -A; git commit -m 'WIP'"
 alias gwp="gw; git push"
 
-if command -v tmux >/dev/null 2>&1 && [[ -z "$TMUX" ]]; then
+if command -v tmux >/dev/null 2>&1 && [[ -z "$TMUX" && "$TERM_PROGRAM" != "vscode" ]]; then
   exec tmux new-session
 fi
