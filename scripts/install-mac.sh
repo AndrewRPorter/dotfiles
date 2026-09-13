@@ -19,4 +19,11 @@ fi
 
 # symlink tmux config
 cwd=$(cd "$(dirname "$0")/.." && pwd)
-ln -sf $cwd/.tmux.conf ~/.tmux.conf
+ln -sf "$cwd/.tmux.conf" "$HOME/.tmux.conf"
+
+echo "[dotfiles] installing tmux plugins"
+"$HOME/.tmux/plugins/tpm/bin/install_plugins"
+
+if tmux has-session 2>/dev/null; then
+    tmux source-file "$HOME/.tmux.conf"
+fi
